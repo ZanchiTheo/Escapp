@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MqttClientComponent } from './mqtt-client.component';
+import { DatagestionComponent } from './datagestion.component';
 
-describe('MqttClientComponent', () => {
-  let component: MqttClientComponent;
-  let fixture: ComponentFixture<MqttClientComponent>;
+describe('DatagestionComponent', () => {
+  let component: DatagestionComponent;
+  let fixture: ComponentFixture<DatagestionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MqttClientComponent ]
+      declarations: [ DatagestionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MqttClientComponent);
+    fixture = TestBed.createComponent(DatagestionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

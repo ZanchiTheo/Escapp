@@ -1,19 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { MqttClientComponent } from './mqtt-client/mqtt-client.component';
+import { AppComponent } from "./app.component";
+import { LayoutModule } from "@angular/cdk/layout";
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+} from "@angular/material";
+
+import { PatientComponent } from "./patient/patient.component";
+import { HttpClientModule } from "@angular/common/http";
+import { RoutingModule } from "./routing/routing.module";
+import { NavComponent } from "./nav/nav.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DatagestionComponent } from "./datagestion/datagestion.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    PatientComponent,
     NavComponent,
-    MqttClientComponent
+    DashboardComponent,
+    DatagestionComponent
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -22,9 +36,11 @@ import { MqttClientComponent } from './mqtt-client/mqtt-client.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

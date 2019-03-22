@@ -1,0 +1,126 @@
+{
+    "patients": [{
+        "id": 1,
+        "name": "patient1",
+        "age": 50,
+        "poids": 50, 
+        "taille": 150,
+        "bradenScore": 6,
+        "patientStatus": "checked",
+        "donnees": [
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "patient2",
+        "age": 20,
+        "poids": 75, 
+        "taille": 170,
+        "bradenScore": 3,
+        "patientStatus": "checked",
+        "donnees": [
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "patient3",
+        "age": 80,
+        "poids": 50, 
+        "taille": 160,
+        "bradenScore": 6,
+        "patientStatus": "checked",
+        "donnees": [
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "patient4",
+        "age": 50,
+        "poids": 50, 
+        "taille": 150,
+        "bradenScore": 1,
+        "patientStatus": "checked",
+        "donnees": [
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            },
+            {
+                "temperature": 21,
+                "humidite": 15,
+                "pression": 0
+            }
+        ]
+    }]
+}
