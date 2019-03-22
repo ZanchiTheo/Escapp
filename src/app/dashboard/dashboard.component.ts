@@ -6,22 +6,22 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.sass']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
-  private patients = [];
+  private patients: Patient[] = [];
   
   constructor(private http: HttpClient) {
 
   }
 
   ngOnInit(): void {
-    this.getPatients().subscribe(data => this.patients = data);
+    this.getPatients().subscribe(data => this.patients = data.patients);
   }
 
-  getPatients(): Observable<Patient[]>{
-    return this.http.get<Patient[]>("/assets/data/patients.json");
+  getPatients(): Observable<any>{
+    return this.http.get("/assets/data/patients.json");
   }
 
 }

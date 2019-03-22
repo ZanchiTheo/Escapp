@@ -1,23 +1,19 @@
 <div class="card">
   <div class="row">
     <div class="col-4">
-      <span>{{patient.name}}</span>
-    </div>
-    <div class="col-2">
-      <span>{{patient.age}}</span>
-    </div>
-    <div class="col-2">
-      <span>{{patient.poids}}</span>
-    </div>
-    <div class="col-2">
-      <span>{{patient.bradenScore}}</span>
-    </div>
-    <div class="col-2">
-      <span [ngSwitch]="patient.patientStatus">
-      <img *ngSwitchCase="checked" src="../../assets/checked.png"/>
-      <img *ngSwitchCase="warning" src="../../assets/warning.png"/>
-      <img *ngSwitchCase="alarm" src="../../assets/alarm.png"/>
-      </span>
-    </div>
+        <span>{{patient.name}}</span>
+      </div>
+      <div class="col-2">
+        <span>{{patient.age}}</span>
+      </div>
+      <div class="col-2">
+        <span>{{patient.poids}}</span>
+      </div>
+      <div class="col-2">
+        <span>{{patient.bradenScore}}</span>
+      </div>
+      <div class="col-2">
+        <img src="../../assets/{{patient.patientStatus}}.png" class="logo"/>
+      </div>
   </div>
 </div>
