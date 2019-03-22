@@ -3,14 +3,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { PatientComponent } from './patient/patient.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { RoutingModule } from './routing/routing.module';
+import { NavComponent } from './nav/nav.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DatagestionComponent } from './datagestion/datagestion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    PatientComponent, 
+    NavComponent,
+    DashboardComponent,
+    DatagestionComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +29,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
