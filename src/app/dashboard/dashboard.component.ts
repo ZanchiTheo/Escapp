@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { PatientdatasService } from '../patientdatas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,16 +11,21 @@ export class DashboardComponent implements OnInit {
 
   private patients: Patient[] = [];
   
-  constructor(private http: HttpClient) {
+  constructor(private patientdatasservice: PatientdatasService) { 
 
   }
 
   ngOnInit(): void {
-    this.getPatients().subscribe(data => this.patients = data.patients);
+    this.patientdatasservice.currentPatientsList.subscribe(patients => {
+      this.patients = patients;
+      console.log("----- dashboard ----- subscribe : ");
+      console.log(this.patients);
+    });
+    
   }
 
-  getPatients(): Observable<any>{
-    return this.http.get("/assets/data/patients.json");
+  getPatientsFromService(): any {
+    
   }
 
 }
