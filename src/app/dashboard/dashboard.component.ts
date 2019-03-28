@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { PatientdatasService } from '../patientdatas.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.sass']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
-  private patients = [];
+  private patients: Patient[] = [];
   
-  constructor(private http: HttpClient) {
+  constructor(private patientdatasservice: PatientdatasService) { 
 
   }
 
   ngOnInit(): void {
-    this.getPatients().subscribe(data => this.patients = data);
+    this.patientdatasservice.currentPatientsList.subscribe(patients => {
+      this.patients = patients;
+      console.log("----- dashboard ----- subscribe : ");
+      console.log(this.patients);
+    });
+    
   }
 
-  getPatients(): Observable<Patient[]>{
-    return this.http.get<Patient[]>("/assets/data/patients.json");
+  getPatientsFromService(): any {
+    
   }
 
 }

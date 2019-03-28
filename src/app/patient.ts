@@ -6,7 +6,7 @@ export class Patient {
     taille: number;
     bradenScore: number;
     patientStatus: string;
-    donnees: { "donnee": donneePatient[] };
+    donnees: donneePatient[];
 }
 
 export class donneePatient {

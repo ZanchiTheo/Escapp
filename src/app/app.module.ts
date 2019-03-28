@@ -2,7 +2,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 
-import { AppComponent } from "./app.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import {
   MatToolbarModule,
@@ -15,9 +14,13 @@ import {
 import { PatientComponent } from "./patient/patient.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RoutingModule } from "./routing/routing.module";
+
+import { AppComponent } from "./app.component";
 import { NavComponent } from "./nav/nav.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { DatagestionComponent } from "./datagestion/datagestion.component";
+
+import { PatientdatasService } from './patientdatas.service'
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { DatagestionComponent } from "./datagestion/datagestion.component";
     HttpClientModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [PatientdatasService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
