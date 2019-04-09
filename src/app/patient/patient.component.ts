@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Patient } from "../patient"
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-patient',
@@ -10,10 +11,14 @@ export class PatientComponent implements OnInit {
 
   patient: Patient;
 
+  private patientDataChart = [];
+
   @Input() set patientDatas(value: Patient) { this.patient = value; }  
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
 
 }

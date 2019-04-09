@@ -1,17 +1,19 @@
 <mat-card class="patientcard">
-  <mat-card-title>{{patient.name}}</mat-card-title>
-  <mat-card-subtitle>{{patient.age}} ans</mat-card-subtitle>
+  <mat-card-header>
+    <img mat-card-avatar src="../../assets/{{patient.patientStatus}}.png">
+    <mat-card-title>{{patient.name}}</mat-card-title>
+    <mat-card-subtitle>{{patient.age}} ans</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
   <mat-card-content>
-    <div class="row">
-        <div class="col-4">
-          <span>Weight: {{patient.poids}}</span>
-        </div>
-        <div class="col-4">
-          <span>Braden score: {{patient.bradenScore}}</span>
-        </div>
-        <div class="col-4">
-          <img src="../../assets/{{patient.patientStatus}}.png" class="logo"/>
-        </div>
+  <div class="row">
+    <mat-list class="col-6">
+      <mat-list-item> Weight: {{patient.poids}} </mat-list-item>
+      <mat-list-item> Braden score: {{patient.bradenScore}} </mat-list-item>
+    </mat-list>
+    <div class="col-6">
+        
     </div>
+  </div>  
   </mat-card-content>
 </mat-card>
