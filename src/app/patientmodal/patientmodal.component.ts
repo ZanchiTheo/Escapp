@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Patient } from '../patient';
 import { Chart } from 'chart.js';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-patientmodal',
@@ -8,6 +9,8 @@ import { Chart } from 'chart.js';
   styleUrls: ['./patientmodal.component.scss']
 })
 export class PatientModalComponent {
+
+  private init: boolean;
 
   private patient: Patient = null;
   public visible = false;   
@@ -21,18 +24,26 @@ export class PatientModalComponent {
   private pressionChart = [];
   private humiditeChart = [];
  
-  public show(p: Patient): void {   
-    this.patient = p;
+  constructor(public dialogRef: MatDialogRef<PatientModalComponent>, @Inject(MAT_DIALOG_DATA) public data: Patient) {
+    this.patient = data;
+    this.init = false;
+  }
+
+  ngOnInit() {
+    this.init = true;
     this.setPatientArrays();
     this.setUpCharts();
-    this.visible = true;     
-    setTimeout(() => this.visibleAnimate = true, 100);   
-  } 
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
   setPatientArrays() {
     this.temperatureArray = [];
     this.pressionArray = [];
     this.humiditeArray = [];
+    console.log(this.temperatureArray);
 
     this.patient.donnees.forEach(donnee => {
       this.temperatureArray.push(donnee.temperature);
@@ -120,16 +131,5 @@ export class PatientModalComponent {
       }
     });
   }
- 
-  public hide(): void {     
-    this.visibleAnimate = false;     
-    setTimeout(() => this.visible = false, 300);
-  } 
- 
-  public onContainerClicked(event: MouseEvent): void {     
-    if ((<HTMLElement>event.target).classList.contains('modal')) {       
-      this.hide();     
-    }   
-  } 
-  
+
 } 

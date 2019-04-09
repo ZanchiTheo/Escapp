@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid patientcontainer">
   <div class="row" *ngFor="let patient of patients">
-    <app-patient [patientDatas]="patient" class="col-12" (click)="patientsModal.show(patient)"></app-patient>
+    <app-patient [patientDatas]="patient" class="col-12" (click)="openDialog(patient)"></app-patient>
   </div>
 </div>
 
-<app-patientmodal #patientsModal></app-patientmodal>
+<!--<app-patientmodal #patientsModal></app-patientmodal>-->

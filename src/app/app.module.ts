@@ -8,7 +8,9 @@ import {
   MatButtonModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule,
+  MatCardModule
 } from "@angular/material";
 
 import { PatientComponent } from "./patient/patient.component";
@@ -42,10 +44,19 @@ import { PatientModalComponent } from './patientmodal/patientmodal.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule, 
+    MatCardModule,
     HttpClientModule,
     RoutingModule
   ],
+
   providers: [PatientdatasService],
-  bootstrap: [AppComponent]
+
+  bootstrap: [AppComponent],
+
+  entryComponents: [
+    DashboardComponent,
+    PatientModalComponent
+  ]
 })
 export class AppModule {}
