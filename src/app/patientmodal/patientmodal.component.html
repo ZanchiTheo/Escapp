@@ -1,0 +1,27 @@
+<div (click)="onContainerClicked($event)" class="modal fade" tabindex="-1" 
+[ngClass]="{'in': visibleAnimate}"        
+[ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}">     
+  <div class="modal-dialog">       
+    <div class="modal-content">         
+      <div class="modal-header">           
+        <h4 class="modal-title" *ngIf="patient">{{patient.name}}</h4>       
+      </div>         
+      <div class="modal-body"> 
+        <div class="row">
+            <div *ngIf="temperatureChart" class=" col-12 chart">
+              <canvas id="temperatureCanvas">{{ temperatureChart }}</canvas>
+            </div>     
+            <div *ngIf="pressionChart" class="col-12 chart">
+              <canvas id="pressionCanvas">{{ pressionChart }}</canvas>
+            </div>
+            <div *ngIf="humiditeChart" class="col-12 chart">
+              <canvas id="humiditeCanvas">{{ humiditeChart }}</canvas>
+            </div>
+          </div>
+        </div>                   
+      <div class="modal-footer">           
+        <button type="button" class="btn btn-default" (click)="hide()">Close</button>      
+      </div>       
+    </div>     
+  </div>   
+</div>   

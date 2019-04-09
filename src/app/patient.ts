@@ -13,4 +13,18 @@ export class donneePatient {
     temperature: number;
     humidite: number;
     pression: number;
+
+    constructor(temperature: number, humidite: number, pression: number) {
+        this.humidite = humidite;
+        this.temperature = temperature;
+        this.pression = pression;
+    }
+
+}
+
+export class Mesure {
+    clientid: number;
+    temperature: number;
+    humidite: number;
+    pression: number;
 }

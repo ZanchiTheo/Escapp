@@ -20,7 +20,8 @@ import { NavComponent } from "./nav/nav.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { DatagestionComponent } from "./datagestion/datagestion.component";
 
-import { PatientdatasService } from './patientdatas.service'
+import { PatientdatasService } from './patientdatas.service';
+import { PatientModalComponent } from './patientmodal/patientmodal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PatientdatasService } from './patientdatas.service'
     PatientComponent,
     NavComponent,
     DashboardComponent,
-    DatagestionComponent
+    DatagestionComponent,
+    PatientModalComponent
   ],
 
   imports: [
