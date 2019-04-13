@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
         //Ajout de la mesure dans les mesures du patient associé
         this.addDonneeToPatient(mesure);
         //Envoie de la liste des patients sur le service
+        console.log("----- app ----- on message received patients list : " + this.patients);
         this.patientdatasservice.changePatients(this.patients);
       }
     };
@@ -48,10 +49,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.patientdatasservice.currentPatientsList.subscribe(patients => {
+      this.patients = patients;
+      console.log("----- dashboard ----- subscribe : ");
+      console.log(this.patients);
+    });
     //Récupération de la liste des clients depuis un fichier json
     this.patients = data.patients;
     console.log("----- app ----- on init : ");
-    console.log(this.patients);
+    console.log("----- app ----- on init patients list : " + this.patients);
     //Envoie de la liste des patients sur le service
     this.patientdatasservice.changePatients(this.patients);
   }
@@ -63,8 +69,10 @@ export class AppComponent implements OnInit {
 
   addDonneeToPatient(mesure: Mesure) {
     this.patients.forEach(patient => {
-      if (patient.id == parseInt(mesure.clientid+'', 10)) {
-        patient.donnees.push(new donneePatient(mesure.temperature, mesure.humidite, mesure.pression));
+      if (patient.id == +mesure.clientid) {
+        console.log("----- app ----- add datas to patient (" + mesure.clientid + ")");
+        patient.donnees.push(new donneePatient(+mesure.temperature, +mesure.humidite, +mesure.pression, mesure.date));
+        console.log("----- app ----- données patient (" + patient.id + ") : " + patient.donnees);
       }
     });
   }

@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Patient } from '../patient';
 import { Chart } from 'chart.js';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { PatientdatasService } from '../patientdatas.service';
 
 @Component({
   selector: 'app-patientmodal',
@@ -12,27 +13,44 @@ export class PatientModalComponent {
 
   private init: boolean;
 
+  private patientID: number;
+  private patients: Patient[];
   private patient: Patient = null;
   public visible = false;   
   public visibleAnimate = false; 
 
+  private dateArray = [];
   private temperatureArray = [];
   private pressionArray = [];
   private humiditeArray = [];
 
-  private temperatureChart = [];
-  private pressionChart = [];
-  private humiditeChart = [];
+  private temphumiChart = [];
+  private pressureChart = [];
  
-  constructor(public dialogRef: MatDialogRef<PatientModalComponent>, @Inject(MAT_DIALOG_DATA) public data: Patient) {
-    this.patient = data;
+  constructor(private patientdatasservice: PatientdatasService, public dialogRef: MatDialogRef<PatientModalComponent>, @Inject(MAT_DIALOG_DATA) public data: number) {
+    this.patientID = data;
     this.init = false;
+    console.log("!!!!! construct patient : " + data + "!!!!!");
   }
 
   ngOnInit() {
+    this.setPatient(this.patientID);
     this.init = true;
     this.setPatientArrays();
     this.setUpCharts();
+  }
+
+  setPatient(id: number) {
+    this.patientdatasservice.currentPatientsList.subscribe(patients => {
+      this.patients = patients;
+      console.log("----- patient modal ----- subscribe : ");
+      console.log(this.patients);
+    });
+    this.patients.forEach(patient => {
+      patient.id == id ? this.patient = patient : this.patient = this.patient;
+    });
+    console.log("!!!!! patient cliqué : ");
+    console.log(this.patient);
   }
 
   onNoClick(): void {
@@ -43,90 +61,75 @@ export class PatientModalComponent {
     this.temperatureArray = [];
     this.pressionArray = [];
     this.humiditeArray = [];
-    console.log(this.temperatureArray);
+    this.dateArray = [];
 
     this.patient.donnees.forEach(donnee => {
       this.temperatureArray.push(donnee.temperature);
       this.pressionArray.push(donnee.pression);
       this.humiditeArray.push(donnee.humidite);
+      this.dateArray.push(donnee.date);
     });
+
+    console.log("temperature array : " + this.temperatureArray);
+    console.log("pression array : " + this.pressionArray);
+    console.log("humidite array : " + this.humiditeArray);
+    console.log("humidite array : " + this.dateArray);
   }
 
   setUpCharts() {
-    this.temperatureChart = new Chart('temperatureCanvas', {
-      type: 'line',
+    this.temphumiChart = new Chart('temphumiCanvas', {
+      type: 'bar',
       data: {
+        labels: this.dateArray,
         datasets: [
           {
-            data: this.temperatureArray,
-            borderColor: "#3cba9f",
-            fill: false
+            label: "Temperature en °C",
+            backgroundColor: "#3e95cd",
+            data: this.temperatureArray
+          }, {
+            label: "Humidite en %",
+            backgroundColor: "#8e5ea2",
+            data: this.humiditeArray
           }
         ]
       },
       options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
+        title: {
+          display: true,
+          text: 'Mesures de température et humidité du patient'
+        }, scales: {
           yAxes: [{
-            display: true
-          }],
+              ticks: {
+                  suggestedMin: 0,
+              }
+          }]
         }
       }
     });
 
-    this.pressionChart = new Chart('pressionCanvas', {
+    this.pressureChart = new Chart('pressureCanvas', {
       type: 'line',
       data: {
+        labels: this.dateArray,
         datasets: [
           {
-            data: this.pressionArray,
-            borderColor: "#3cba9f",
-            fill: false
+            fill: false,
+            label: "Pression",
+            backgroundColor: "#3e95cd",
+            data: this.pressionArray
           }
         ]
       },
       options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
+        title: {
+          display: true,
+          text: 'Mesures de pression du patient'
+        }, scales: {
           yAxes: [{
-            display: true
-          }],
-        }
-      }
-    });
-
-    this.humiditeChart = new Chart('humiditeCanvas', {
-      type: 'line',
-      data: {
-        datasets: [
-          {
-            data: this.humiditeArray,
-            borderColor: "#3cba9f",
-            fill: false
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }],
+              ticks: {
+                  suggestedMin: 0,
+              }
+          }]
         }
       }
     });

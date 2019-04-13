@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   openDialog(p: Patient): void {
     const dialogRef = this.dialog.open(PatientModalComponent, {
       width: '750',
-      data: p
+      data: p.id
     });
   }
 
