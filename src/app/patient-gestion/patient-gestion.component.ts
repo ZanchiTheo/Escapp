@@ -11,14 +11,6 @@ export class PatientGestionComponent implements OnInit {
   nutrition: string[] = ['Très Pauvre', 'Probablement insuffisante', 'Correcte', 'Excellente'];
   activite: string[] = ['Alité', 'Confiné au fauteuil', 'Marche occasionnellement', 'Marche fréquemment'];
   friction:string []=["Problème préent","Problème potentiel","Pas de problème apparent"]
-  nut:string;
-  act:string;
-  fric:string;
-  dataPatient:{
-    nutrition:number
-    activite:number
-    friction:number
-  }
 
   private patientDataChart = [];
 
