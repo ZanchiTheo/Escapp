@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
 import { PatientdatasService } from '../patientdatas.service';
-import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-datagestion',

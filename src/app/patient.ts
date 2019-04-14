@@ -35,21 +35,3 @@ export class Mesure {
     humidite: number;
     pression: number;
 }
-
-export function getBradenScore(p:Patient){
-let bradenscore=0;
-if(p.donnees[p.donnees.length-1].temperature>25){
-    bradenscore+=1
-}
-if(p.donnees[p.donnees.length-1].humidite>25){
-    bradenscore+=1
-}
-if(p.donnees[p.donnees.length-1].pression>25){
-    bradenscore+=1
-}
-bradenscore+=p.donneeManuelle.activite;
-bradenscore+=p.donneeManuelle.friction;
-bradenscore+=p.donneeManuelle.nutrition;
-p.bradenScore=bradenscore;
-return bradenscore;
-}
