@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{patient.name}}</h1>
+<div mat-dialog-content>
+  <div class="row">
+    <div class=" col-6 chart">
+      <canvas id="temperatureCanvas">{{ temperatureChart }}</canvas>
+    </div>     
+    <div class="col-6 chart">
+      <canvas id="pressionCanvas">{{ pressionChart }}</canvas>
+    </div>
+    <div class="col-6 chart">
+      <canvas id="humiditeCanvas">{{ humiditeChart }}</canvas>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Close</button>
+</div>

@@ -1,23 +1,34 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
+import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from "./app.component";
+
+
 import { LayoutModule } from "@angular/cdk/layout";
 import {
   MatToolbarModule,
   MatButtonModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule,
+  MatCardModule,
+  MatRadioModule
 } from "@angular/material";
 
 import { PatientComponent } from "./patient/patient.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RoutingModule } from "./routing/routing.module";
+
+import { AppComponent } from "./app.component";
 import { NavComponent } from "./nav/nav.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { DatagestionComponent } from "./datagestion/datagestion.component";
+
+import { PatientdatasService } from './patientdatas.service';
+import { PatientModalComponent } from './patientmodal/patientmodal.component';
+import { PatientGestionComponent } from './patient-gestion/patient-gestion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +36,9 @@ import { DatagestionComponent } from "./datagestion/datagestion.component";
     PatientComponent,
     NavComponent,
     DashboardComponent,
-    DatagestionComponent
+    DatagestionComponent,
+    PatientModalComponent,
+    PatientGestionComponent
   ],
 
   imports: [
@@ -37,10 +50,21 @@ import { DatagestionComponent } from "./datagestion/datagestion.component";
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule, 
+    MatCardModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule,
+    MatRadioModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+  providers: [PatientdatasService],
+
+  bootstrap: [AppComponent],
+
+  entryComponents: [
+    DashboardComponent,
+    PatientModalComponent
+  ]
 })
 export class AppModule {}

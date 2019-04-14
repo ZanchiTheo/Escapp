@@ -1,3 +1,9 @@
-<p>
-  dashboard works!
-</p>
+<div class="container-fluid patientcontainer">
+  <div class="row">
+    <div class="col-6" *ngFor="let patient of patients">
+      <app-patient [patientDatas]="patient" (click)="openDialog(patient)"></app-patient>
+    </div>   
+  </div>
+</div>
+
+<!--<app-patientmodal #patientsModal></app-patientmodal>-->

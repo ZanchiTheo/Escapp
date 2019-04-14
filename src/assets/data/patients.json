@@ -14,21 +14,26 @@
                 "pression": 0
             },
             {
-                "temperature": 21,
+                "temperature": 19,
                 "humidite": 15,
                 "pression": 0
             },
             {
-                "temperature": 21,
+                "temperature": 30,
                 "humidite": 15,
                 "pression": 0
             },
             {
-                "temperature": 21,
+                "temperature": 23,
                 "humidite": 15,
                 "pression": 0
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 2,
@@ -59,7 +64,12 @@
                 "humidite": 15,
                 "pression": 0
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 3,
@@ -90,7 +100,12 @@
                 "humidite": 15,
                 "pression": 0
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 4,
@@ -121,6 +136,11 @@
                 "humidite": 15,
                 "pression": 0
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     }]
 }
