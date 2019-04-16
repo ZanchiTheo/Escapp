@@ -10,25 +10,34 @@
         "donnees": [
             {
                 "temperature": 21,
-                "humidite": 15,
-                "pression": 0
+                "humidite": 5,
+                "pression": 3,
+                "date": "12:05"
             },
             {
-                "temperature": 21,
-                "humidite": 15,
-                "pression": 0
+                "temperature": 30,
+                "humidite": 5,
+                "pression": 3,
+                "date": "12:05"
             },
             {
-                "temperature": 21,
-                "humidite": 15,
-                "pression": 0
+                "temperature": 30,
+                "humidite": 5,
+                "pression": 3,
+                "date": "12:05"
             },
             {
-                "temperature": 21,
-                "humidite": 15,
-                "pression": 0
+                "temperature": 23,
+                "humidite": 5,
+                "pression": 3,
+                "date": "12:05"
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 2,
@@ -42,24 +51,33 @@
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 3,
@@ -73,24 +91,33 @@
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     },
     {
         "id": 4,
@@ -104,23 +131,32 @@
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             },
             {
                 "temperature": 21,
                 "humidite": 15,
-                "pression": 0
+                "pression": 0,
+                "date": "12:05"
             }
-        ]
+        ],
+        "donneeManuelle":{
+            "nutrition":4,
+            "activite":4,
+            "friction":4
+        }
     }]
 }

@@ -6,11 +6,35 @@ export class Patient {
     taille: number;
     bradenScore: number;
     patientStatus: string;
-    donnees: { "donnee": donneePatient[] };
+    donnees: donneePatient[];
+    donneeManuelle:donneeManuelle;
+}
+
+export class donneeManuelle{
+    nutrition:number;
+    activite:number;
+    friction:number;
 }
 
 export class donneePatient {
     temperature: number;
     humidite: number;
     pression: number;
+    date: string;
+
+    constructor(temperature: number, humidite: number, pression: number, date: string) {
+        this.humidite = humidite;
+        this.temperature = temperature;
+        this.pression = pression;
+        this.date = date;
+    }
+
+}
+
+export class Mesure {
+    clientid: number;
+    temperature: number;
+    humidite: number;
+    pression: number;
+    date: string;
 }

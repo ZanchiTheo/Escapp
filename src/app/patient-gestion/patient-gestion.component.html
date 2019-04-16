@@ -1,0 +1,48 @@
+<mat-card class="patientcard">
+  <mat-card-header>
+    <mat-card-title>{{patient.name}}</mat-card-title>
+    <mat-card-subtitle>{{patient.age}} ans</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <div class="row">
+
+    <div class ="col-12 text-center">
+        Nutrition
+    </div>
+    <div class="col-12">   
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+      [(ngModel)]="patient.donneeManuelle.nutrition">
+      <mat-radio-button class="example-radio-button" *ngFor="let value of nutrition" [value]="nutrition.indexOf(value)+1">
+        {{value}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>Your Nutrition Score is: {{patient.donneeManuelle.nutrition}}</div>
+  </div>
+  <div class ="col-12 text-center">
+      Activity
+  </div>
+    <div class="col-12">
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="patient.donneeManuelle.activite">
+        <mat-radio-button class="example-radio-button" *ngFor="let value of activite" [value]="activite.indexOf(value)+1">
+          {{value}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div>Your Activity Score is: {{patient.donneeManuelle.activite}}</div>
+    </div>
+    <div class ="col-12 text-center">
+        Friction
+    </div>
+      <div class="col-12">
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+          [(ngModel)]="patient.donneeManuelle.friction">
+          <mat-radio-button class="example-radio-button" *ngFor="let value of friction" [value]="friction.indexOf(value)+1">
+            {{value}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div>Your Friction Score is: {{patient.donneeManuelle.friction}}</div>
+      </div>
+  </div>  
+  </mat-card-content>
+</mat-card>
