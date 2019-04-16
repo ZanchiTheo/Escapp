@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
 
     this._client.onConnectionLost = (responseObject: Object) => {
       console.log("Connection lost.");
+      console.log("Trying to reconnect to broker");
+      this._client.connect({ onSuccess: this.onConnected.bind(this) });
     };
 
     //Reception du message MQTT
