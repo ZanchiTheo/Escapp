@@ -7,6 +7,13 @@ export class Patient {
     bradenScore: number;
     patientStatus: string;
     donnees: donneePatient[];
+    donneeManuelle:donneeManuelle;
+}
+
+export class donneeManuelle{
+    nutrition:number;
+    activite:number;
+    friction:number;
 }
 
 export class donneePatient {

@@ -1,6 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
+import { FormsModule } from '@angular/forms';
+
+
 
 import { LayoutModule } from "@angular/cdk/layout";
 import {
@@ -10,7 +13,8 @@ import {
   MatIconModule,
   MatListModule,
   MatDialogModule,
-  MatCardModule
+  MatCardModule,
+  MatRadioModule
 } from "@angular/material";
 
 import { PatientComponent } from "./patient/patient.component";
@@ -24,6 +28,7 @@ import { DatagestionComponent } from "./datagestion/datagestion.component";
 
 import { PatientdatasService } from './patientdatas.service';
 import { PatientModalComponent } from './patientmodal/patientmodal.component';
+import { PatientGestionComponent } from './patient-gestion/patient-gestion.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import { PatientModalComponent } from './patientmodal/patientmodal.component';
     NavComponent,
     DashboardComponent,
     DatagestionComponent,
-    PatientModalComponent
+    PatientModalComponent,
+    PatientGestionComponent
   ],
 
   imports: [
@@ -47,7 +53,9 @@ import { PatientModalComponent } from './patientmodal/patientmodal.component';
     MatDialogModule, 
     MatCardModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule,
+    MatRadioModule
   ],
 
   providers: [PatientdatasService],
