@@ -8,7 +8,9 @@ import {
   MatButtonModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule,
+  MatCardModule
 } from "@angular/material";
 
 import { PatientComponent } from "./patient/patient.component";
@@ -20,7 +22,8 @@ import { NavComponent } from "./nav/nav.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { DatagestionComponent } from "./datagestion/datagestion.component";
 
-import { PatientdatasService } from './patientdatas.service'
+import { PatientdatasService } from './patientdatas.service';
+import { PatientModalComponent } from './patientmodal/patientmodal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { PatientdatasService } from './patientdatas.service'
     PatientComponent,
     NavComponent,
     DashboardComponent,
-    DatagestionComponent
+    DatagestionComponent,
+    PatientModalComponent
   ],
 
   imports: [
@@ -40,10 +44,19 @@ import { PatientdatasService } from './patientdatas.service'
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule, 
+    MatCardModule,
     HttpClientModule,
     RoutingModule
   ],
+
   providers: [PatientdatasService],
-  bootstrap: [AppComponent]
+
+  bootstrap: [AppComponent],
+
+  entryComponents: [
+    DashboardComponent,
+    PatientModalComponent
+  ]
 })
 export class AppModule {}
