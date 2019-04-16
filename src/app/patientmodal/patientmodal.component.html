@@ -1,15 +1,12 @@
 <h1 mat-dialog-title>{{patient.name}}</h1>
 <div mat-dialog-content>
   <div class="row">
-    <div class=" col-6 chart">
-      <canvas id="temperatureCanvas">{{ temperatureChart }}</canvas>
+    <div class=" col-12 chart">
+      <canvas id="temphumiCanvas" style="position: relative; height:40vh; width:80vw">{{ temphumiChart }}</canvas>
     </div>     
-    <div class="col-6 chart">
-      <canvas id="pressionCanvas">{{ pressionChart }}</canvas>
-    </div>
-    <div class="col-6 chart">
-      <canvas id="humiditeCanvas">{{ humiditeChart }}</canvas>
-    </div>
+    <div class=" col-12 chart">
+      <canvas id="pressureCanvas" style="position: relative; height:40vh; width:80vw">{{ pressureChart }}</canvas>
+    </div> 
   </div>
 </div>
 <div mat-dialog-actions>
