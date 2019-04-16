@@ -11,7 +11,7 @@ import { PatientdatasService } from '../patientdatas.service';
 })
 export class PatientModalComponent {
 
-  private init: boolean;
+  private init: boolean = false;
 
   private patientID: number;
   private patients: Patient[];
@@ -24,18 +24,16 @@ export class PatientModalComponent {
   private pressionArray = [];
   private humiditeArray = [];
 
-  private temphumiChart = [];
-  private pressureChart = [];
+  private temphumiChart: Chart = [];
+  private pressureChart: Chart = [];
  
   constructor(private patientdatasservice: PatientdatasService, public dialogRef: MatDialogRef<PatientModalComponent>, @Inject(MAT_DIALOG_DATA) public data: number) {
     this.patientID = data;
-    this.init = false;
-    console.log("!!!!! construct patient : " + data + "!!!!!");
+    //console.log("!!!!! construct patient : " + data + "!!!!!");
   }
 
   ngOnInit() {
     this.setPatient(this.patientID);
-    this.init = true;
     this.setPatientArrays();
     this.setUpCharts();
   }
@@ -43,14 +41,18 @@ export class PatientModalComponent {
   setPatient(id: number) {
     this.patientdatasservice.currentPatientsList.subscribe(patients => {
       this.patients = patients;
+      
       console.log("----- patient modal ----- subscribe : ");
-      console.log(this.patients);
+      //console.log(this.patients);
+
+      this.patients.forEach(patient => {
+        patient.id == id ? this.patient = patient : this.patient = this.patient;
+      });
+
     });
-    this.patients.forEach(patient => {
-      patient.id == id ? this.patient = patient : this.patient = this.patient;
-    });
-    console.log("!!!!! patient cliqué : ");
-    console.log(this.patient);
+    
+    //console.log("!!!!! patient cliqué : ");
+    //console.log(this.patient);
   }
 
   onNoClick(): void {
@@ -70,13 +72,14 @@ export class PatientModalComponent {
       this.dateArray.push(donnee.date);
     });
 
-    console.log("temperature array : " + this.temperatureArray);
-    console.log("pression array : " + this.pressionArray);
-    console.log("humidite array : " + this.humiditeArray);
-    console.log("humidite array : " + this.dateArray);
+    //console.log("temperature array : " + this.temperatureArray);
+    //console.log("pression array : " + this.pressionArray);
+    //console.log("humidite array : " + this.humiditeArray);
+    //console.log("humidite array : " + this.dateArray);
   }
 
   setUpCharts() {
+    this.init = true;
     this.temphumiChart = new Chart('temphumiCanvas', {
       type: 'bar',
       data: {
@@ -134,5 +137,5 @@ export class PatientModalComponent {
       }
     });
   }
-
+  
 } 

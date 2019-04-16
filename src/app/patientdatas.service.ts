@@ -20,8 +20,8 @@ export class PatientdatasService {
 
   changePatients(patients: Patient[]) {
     this.patientsListSource.next(patients);
-    console.log("----- patientdataservice ----- changePatients : ");
-    console.log(patients);
+    //console.log("----- patientdataservice ----- changePatients : ");
+    //console.log(patients);
   }
   
 }

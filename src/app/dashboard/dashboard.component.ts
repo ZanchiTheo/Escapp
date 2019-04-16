@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.patientdatasservice.currentPatientsList.subscribe(patients => {
       this.patients = patients;
-      console.log("----- dashboard ----- subscribe : ");
-      console.log(this.patients);
+      //console.log("----- dashboard ----- subscribe : ");
+      //console.log(this.patients);
     });
     
   }
